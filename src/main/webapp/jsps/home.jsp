@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to KK AWS</h1>
+<h1 align="center">Welcome to AWS</h1>
 <h1 align="center"> shaik Gouse</h1>
 <hr>
 <br>
@@ -37,10 +37,10 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		KK FUNDA, 
 		Martha Halli, Banglore,
 		Bangalore,
-		+91-9676831734,+91-9676831734
-		kkeducationblr@gmail.com
+		+91-9652433810,+91-62811744383
+		gouse6921@gmail.com
 		<br>
-		<a href="mailto:kkeducation@gmail.com">Mail to KK FUNDA</a>
+		<a href="mailto:kkeducation@gmail.com">Mail to gouse</a>
 	</span>
 </div>
 <hr>
