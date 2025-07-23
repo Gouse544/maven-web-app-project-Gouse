@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>KK FUNDA Home Page</title>
+<title>KK Home Page</title>
 <link href="images/kkfunda.jpg" rel="icon">
 </head>
 </head>
@@ -34,21 +34,20 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/kkfunda.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		KK FUNDA, 
-		Martha Halli, Banglore,
-		Bangalore,
+		SHAIK GOUSE, 
+		MNANDYALA, ANDHRA PRADESH,
 		+91-9652433810,+91-62811744383
 		gouse6921@gmail.com
 		<br>
-		<a href="mailto:kkeducation@gmail.com">Mail to gouse</a>
+		<a href="mailto:gouse6921@gmail.com">Mail to gouse</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>KK FUNDA Training, Development Center.</p>
-<p align=center><small>Copyrights 2024 by <a href="google.com/">KK FUNDA</a> </small></p>
+<p align=center> Development</p>
+<p align=center><small>Copyrights 2024 by <a href="google.com/">SHAIK</a> </small></p>
 
 </body>
 </html>
