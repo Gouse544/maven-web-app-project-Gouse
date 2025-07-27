@@ -29,7 +29,7 @@ node {
         sh  "${mavenHome}/bin/mvn clean deploy"
 	}
 	stage('Deploy to Tomcat') {
-        echo "Deploying WAR file using curl..."
+        echo "Deploying WAR file using curl.."
 
         sh """
             curl -u admin:Zxcvbnm@44 \
