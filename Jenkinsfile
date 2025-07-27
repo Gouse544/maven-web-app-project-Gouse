@@ -10,7 +10,7 @@ node {
 
 	stage('git checkout')
 	{
-        git branch: 'main', credentialsId: 'fbd12f7f-dbf3-4392-a0c0-f9855d79ae0c', url: 'https://github.com/Gouse544/maven-web-app-project-Gouse.git'
+        git branch: 'BUILD', credentialsId: 'fbd12f7f-dbf3-4392-a0c0-f9855d79ae0c', url: 'https://github.com/Gouse544/maven-web-app-project-Gouse.git'
 	}
 	stage('compile')
 	{
@@ -33,7 +33,7 @@ node {
 
         sh """
             curl -u admin:Zxcvbnm@44 \
-            --upload-file "/var/lib/jenkins/workspace/Multibranch Pipeline/target/maven-web-application.war" \
+            --upload-file "/var/lib/jenkins/workspace/BUILD/target/maven-web-application.war" \
             "http://44.221.158.91:8080/manager/text/deploy?path=/maven-web-application&update=true"
         """
     }
