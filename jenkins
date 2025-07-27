@@ -1,0 +1,77 @@
+pipeline {
+  agent any
+
+  tools {
+    maven "maven3.9.9"
+  }
+
+  triggers {
+    pollSCM('* * * * *')
+  }
+
+  stages {
+
+    stage('checkout') {
+      steps {
+        git branch: 'main', credentialsId: 'fbd12f7f-dbf3-4392-a0c0-f9855d79ae0c', url: 'https://github.com/Gouse544/maven-web-app-project-Gouse.git'
+      }
+    }
+
+    stage('COMPILE') {
+      steps {
+        sh "mvn clean compile"
+      }
+    }
+
+    stage('BUILD') {
+      steps {
+        sh "mvn clean package"
+      }
+    }
+
+    stage('SQ REPORT') {
+      steps {
+        sh "mvn clean sonar:sonar"
+      }
+    }
+
+    stage('Deploy to Nexus') {
+      steps {
+        sh "mvn clean deploy"
+      }
+    }
+
+    stage('Deploy App') {
+      steps {
+        echo "Deploying WAR file using curl..."
+        sh """
+          curl -u admin:Zxcvbnm@44 \
+          --upload-file "/var/lib/jenkins/workspace/declarative-pipeline/target/maven-web-application.war" \
+          "http://44.221.158.91:8080/manager/text/deploy?path=/maven-web-application&update=true"
+        """
+      }
+    }
+
+  } // end of stages
+
+  post {
+    always {
+      echo "Build completed: ${currentBuild.currentResult}"
+    }
+
+    success {
+      slackSend (
+        color: '#00FF00',
+        message: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' completed successfully. ${env.BUILD_URL}"
+      )
+    }
+
+    failure {
+      slackSend (
+        color: '#FF0000',
+        message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' failed. ${env.BUILD_URL}"
+      )
+    }
+  }
+
+} // end of pipeline
