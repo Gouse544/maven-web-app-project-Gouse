@@ -33,7 +33,7 @@ node {
 
         sh """
             curl -u admin:Zxcvbnm@44 \
-            --upload-file "/var/lib/jenkins/workspace/BUILD/target/maven-web-application.war" \
+            --upload-file "/var/lib/jenkins/jobs/multibranchpipeline/branches/BUILD/target/maven-web-application.war" \
             "http://44.221.158.91:8080/manager/text/deploy?path=/maven-web-application&update=true"
         """
     }
